@@ -1,6 +1,6 @@
 # 캡처함 개인정보처리방침 페이지
 
-이 폴더는 캡처함(JG Studio) 앱의 **외부 공개용 개인정보처리방침**
+이 폴더는 캡처함(JG Studio KR) 앱의 **외부 공개용 개인정보처리방침**
 정적 웹페이지입니다. 서버, 데이터베이스, JavaScript 없이 `index.html`
 하나로 완성된 페이지이며, Google Play 콘솔의 개인정보처리방침 URL
 항목이나 앱 스토어 등록에 그대로 사용할 수 있습니다.
@@ -54,7 +54,9 @@ GitHub Pages 설정을 실행하지는 않았습니다. 준비가 되면 직접
 `index.html`의 `<header>` 안, 다음 줄을 찾아 날짜를 바꿉니다.
 
 ```html
-<span class="effective-date">시행일: 2026년 7월 24일</span>
+<span class="effective-date">
+  시행일: 2026년 7월 24일 · 최종 수정일: 2026년 7월 24일
+</span>
 ```
 
 방침 내용을 실제로 변경했을 때만 이 날짜를 갱신하세요.
@@ -65,7 +67,7 @@ GitHub Pages 설정을 실행하지는 않았습니다. 준비가 되면 직접
 
 ```html
 <dt>개발자</dt>
-<dd>JG Studio</dd>
+<dd>JG Studio KR</dd>
 <dt>이메일</dt>
 <dd><a href="mailto:captureham@gmail.com">captureham@gmail.com</a></dd>
 ```
