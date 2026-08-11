@@ -221,7 +221,7 @@
       안전하게 처리합니다.
     </p>
     <span class="effective-date">
-      최초 시행일: 2026년 7월 24일 · 개정 및 시행일: 2026년 8월 10일
+      최초 시행일: 2026년 7월 24일 · 개정 및 시행일: 2026년 8월 11일
     </span>
   </header>
 
@@ -243,14 +243,16 @@
       <li>OCR로 인식한 문구와 위치 정보, 날짜, 시간, 장소, 전화번호, 이메일, URL, 금액 등의 분석 결과</li>
       <li>일정 제목, 날짜, 시간, 장소, 메모, 알림 설정 및 캘린더 등록 상태</li>
       <li>온보딩 완료 여부, 권한 안내 상태, 기능 설정 등 앱 환경설정</li>
-      <li>프리미엄 구매 검증에 필요한 패키지명, 상품 ID 및 Google Play purchaseToken</li>
-      <li>구매 검증 서버 접속 과정에서 생성될 수 있는 IP 주소, User-Agent, 요청 URL, HTTP 상태 및 처리 시간 등의 운영 메타데이터</li>
+      <li>광고 제공 과정에서 Google Mobile Ads SDK가 처리할 수 있는 광고 관련
+        식별자 등 정보(제8조 참고)</li>
     </ul>
     <div class="note">
       <p><strong>중요</strong></p>
       <ul>
-        <li>캡처 이미지와 OCR 본문은 JG Studio KR의 OCR 서버로 전송하지 않습니다.</li>
+        <li>캡처 이미지와 OCR 본문은 JG Studio KR의 서버로 전송하지 않습니다.</li>
         <li>결제수단, 카드번호 및 Google 계정 이메일에는 앱이나 개발자가 접근하지 않습니다.</li>
+        <li>캡처함은 회원가입·로그인·인앱결제·구독 기능을 제공하지 않으며,
+          자체 구매 검증 서버를 호출하지 않습니다.</li>
         <li>개인정보를 판매하지 않습니다.</li>
       </ul>
     </div>
@@ -287,7 +289,6 @@
       <li>저장한 일정에 연결된 이미지, OCR 문구 및 좌표</li>
       <li>임시 공유 이미지 캐시</li>
       <li>온보딩, 권한 안내, 자동 감지 등 앱 설정</li>
-      <li>프리미엄 이용 상태를 빠르게 표시하기 위한 entitlement 정보</li>
     </ul>
     <p>
       캡처함에는 자체 일정/OCR 동기화 서버가 없으며, 위 로컬 데이터를
@@ -306,7 +307,6 @@
       </li>
       <li>여러 일정이 같은 이미지를 참조할 때는 남아 있는 일정에 필요한 이미지를 보호합니다.</li>
       <li>시스템 캘린더에 사용자가 직접 저장한 일정은 캡처함의 삭제 기능으로 삭제되지 않습니다.</li>
-      <li>프리미엄 구매 entitlement는 일정 데이터와 별개이므로 전체 일정 삭제 대상에 포함되지 않습니다.</li>
       <li>앱을 삭제하면 운영체제가 앱 전용 로컬 데이터를 삭제합니다.</li>
     </ul>
   </section>
@@ -358,59 +358,43 @@
   </section>
 
   <section>
-    <h2>제8조 Google Play 인앱결제</h2>
+    <h2>제8조 광고(Google AdMob)</h2>
     <p>
-      캡처함은 Google Play를 통한 일회성 프리미엄 상품
-      <strong>captureham_premium_lifetime</strong> 구매를 지원합니다.
+      캡처함은 앱 운영 및 무료 서비스 제공을 위해 Google AdMob(Google Mobile
+      Ads SDK)을 사용해 광고를 표시할 수 있습니다.
     </p>
     <ul>
-      <li>구매와 결제 처리는 Google Play 결제 시스템에서 이루어집니다.</li>
-      <li>앱과 개발자는 카드번호, 결제수단 또는 Google 계정 이메일에 접근하지 않습니다.</li>
-      <li>구매 상태를 확인하기 위해 앱은 구매 검증 서버에 패키지명, 상품 ID 및 purchaseToken을 전송합니다.</li>
+      <li>보관함 화면 하단에 배너 광고가 표시될 수 있습니다.</li>
+      <li>일정을 일정 횟수 이상 저장하면 전면 광고가 표시될 수 있습니다.</li>
     </ul>
-  </section>
-
-  <section>
-    <h2>제9조 구매 검증 서버</h2>
     <p>
-      JG Studio KR은 Google Cloud Run에서 구매 검증 서버를 운영합니다.
-      이 서버는 전달받은 구매 정보를 Google Play Developer API로 확인하여
-      구매 유효 여부를 앱에 응답합니다.
+      광고를 제공하는 과정에서 Google Mobile Ads SDK가 기기 식별자, 광고 관련
+      식별자, 대략적인 위치, 앱 상호작용 정보, 진단 정보 등의 데이터를 처리할
+      수 있습니다. 이 데이터 처리는 캡처함이 아니라 Google의 서비스 및
+      개인정보처리방침에 따라 이루어집니다. 자세한 내용은
+      <a
+        href="https://policies.google.com/privacy"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Google 개인정보처리방침</a>에서 확인할 수 있습니다.
     </p>
-    <ul>
-      <li>앱에서 서버로 보내는 값: packageName, productId, purchaseToken</li>
-      <li>Google Play Developer API 확인에 사용하는 값: 서버에 고정된 packageName과 purchaseToken</li>
-      <li>Google API 응답에서 일시적으로 확인할 수 있는 값: 구매 상태, productId, acknowledgement 상태 및 orderId</li>
-    </ul>
-    <p>구매 검증 서버는 일정, 스크린샷, OCR 문구, 전화번호, 이메일, 장소 또는 메모를 받지 않습니다.</p>
-  </section>
-
-  <section>
-    <h2>제10조 구매 데이터 보관 및 Cloud Run 운영 로그</h2>
-    <h3>구매 데이터 보관</h3>
-    <ul>
-      <li>purchaseToken을 서버 데이터베이스나 파일에 영구 저장하지 않습니다.</li>
-      <li>orderId를 영구 저장하지 않습니다.</li>
-      <li>구매 검증 request body 전체를 애플리케이션 로그에 기록하지 않습니다.</li>
-      <li>Authorization header와 서비스 계정 credential 또는 key를 로그에 기록하지 않습니다.</li>
-    </ul>
-    <h3>Cloud Run 플랫폼 로그</h3>
-    <p>서비스 운영과 장애 진단을 위해 Cloud Run 플랫폼 요청 로그에 다음 메타데이터가 기록될 수 있습니다.</p>
-    <ul>
-      <li>원격 IP 주소와 User-Agent</li>
-      <li>요청 URL과 HTTP 상태</li>
-      <li>요청 처리 시간 등의 접속·진단 정보</li>
-    </ul>
     <div class="note">
       <p>
-        플랫폼 요청 로그에는 purchaseToken과 request body 전체가 기록되지 않도록
-        애플리케이션을 구성했으며, 운영 로그는 최대 30일 보관 후 삭제됩니다.
+        캡처함 또는 개발자는 광고 제공을 목적으로 사용자의 스크린샷 원본,
+        OCR 인식 문구, 일정 제목·장소·메모 등 캡처함 고유 데이터를 Google
+        AdMob이나 그 밖의 서버로 전송하지 않습니다. 광고 SDK가 처리하는
+        데이터와 캡처함이 기기 내부에서 처리하는 캡처·일정 데이터는 서로
+        분리되어 있습니다.
       </p>
     </div>
+    <p>
+      캡처함은 개인정보를 판매하거나 데이터 중개업체에 제공하지 않으며,
+      Firebase 제품을 연동하지 않습니다.
+    </p>
   </section>
 
   <section>
-    <h2>제11조 외부 앱 및 서비스 연결</h2>
+    <h2>제9조 외부 앱 및 서비스 연결</h2>
     <p>사용자가 관련 버튼을 직접 누른 경우에만 필요한 정보가 외부 앱으로 전달될 수 있습니다.</p>
     <ul>
       <li>네이버지도: 장소 검색어</li>
@@ -427,38 +411,30 @@
   </section>
 
   <section>
-    <h2>제12조 회원가입 및 계정</h2>
+    <h2>제10조 회원가입 및 계정</h2>
     <ul>
       <li>회원가입 또는 로그인 기능이 없습니다.</li>
       <li>이름, 생년월일, 비밀번호 또는 Google 계정 이메일을 회원 정보로 수집하지 않습니다.</li>
       <li>자체 일정/OCR 계정이나 동기화 서비스를 제공하지 않습니다.</li>
+      <li>인앱결제, 프리미엄 상품, 구독 기능을 제공하지 않으며, 자체 구매 검증
+        서버를 운영·호출하지 않습니다.</li>
     </ul>
   </section>
 
   <section>
-    <h2>제13조 광고 및 마케팅</h2>
-    <ul>
-      <li>광고를 표시하지 않으며 광고 SDK를 포함하지 않습니다.</li>
-      <li>광고 맞춤화나 마케팅 프로파일 작성을 위해 사용자 데이터를 처리하지 않습니다.</li>
-      <li>사용자 데이터를 판매하거나 데이터 중개업체에 제공하지 않습니다.</li>
-      <li>Firebase 제품을 연동하지 않습니다.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>제14조 데이터 보안</h2>
+    <h2>제11조 데이터 보안</h2>
     <ul>
       <li>캡처 및 OCR 데이터는 앱 전용 로컬 저장공간을 중심으로 처리합니다.</li>
       <li>Android 자동 백업과 기기 간 이전에서 앱 데이터를 제외하도록 구성합니다.</li>
-      <li>구매 검증 통신은 HTTPS를 사용합니다.</li>
-      <li>민감한 purchaseToken, request body 및 외부 실행 URI를 로그에 기록하지 않습니다.</li>
+      <li>광고 SDK를 포함한 외부 통신은 HTTPS를 사용합니다.</li>
+      <li>외부 실행 URI를 로그에 기록하지 않습니다.</li>
       <li>필요한 데이터만 처리하고 사용자가 직접 삭제할 수 있는 기능을 제공합니다.</li>
     </ul>
     <p>기기 잠금, 운영체제 보안 상태 및 외부 앱의 보안은 사용자의 기기 환경에도 영향을 받습니다.</p>
   </section>
 
   <section>
-    <h2>제15조 개인정보처리방침 변경</h2>
+    <h2>제12조 개인정보처리방침 변경</h2>
     <ul>
       <li>앱 기능이나 관련 정책이 변경되는 경우 이 방침이 수정될 수 있습니다.</li>
       <li>중요한 변경 사항은 앱 또는 이 공개 페이지를 통해 안내합니다.</li>
@@ -468,7 +444,7 @@
   </section>
 
   <section>
-    <h2>제16조 문의처</h2>
+    <h2>제13조 문의처</h2>
     <div class="contact-box">
       <dl>
         <dt>개발자</dt>
