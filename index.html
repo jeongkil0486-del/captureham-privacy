@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>캡처함 개인정보처리방침</title>
 <style>
   :root {
@@ -217,11 +217,12 @@
   <header>
     <h1>캡처함 개인정보처리방침</h1>
     <p class="subtitle">
-      캡처함은 사용자의 스크린샷과 일정 정보를 가능한 한 기기 안에서
-      안전하게 처리합니다.
+      캡처함의 기본 분석은 사용자의 스크린샷과 일정 정보를 가능한 한 기기
+      안에서 처리합니다. 사용자가 AI 정밀 분석을 직접 선택한 경우에만 선택한
+      캡처 이미지를 외부 AI 처리에 전송합니다.
     </p>
     <span class="effective-date">
-      최초 시행일: 2026년 7월 24일 · 개정 및 시행일: 2026년 8월 11일
+      최초 시행일: 2026년 7월 24일 · 개정 및 시행일: 2026년 8월 18일
     </span>
   </header>
 
@@ -242,14 +243,17 @@
       <li>실시간 스캔 또는 촬영 기능에서 사용하는 카메라 이미지</li>
       <li>OCR로 인식한 문구와 위치 정보, 날짜, 시간, 장소, 전화번호, 이메일, URL, 금액 등의 분석 결과</li>
       <li>일정 제목, 날짜, 시간, 장소, 메모, 알림 설정 및 캘린더 등록 상태</li>
-      <li>온보딩 완료 여부, 권한 안내 상태, 기능 설정 등 앱 환경설정</li>
+      <li>AI 정밀 분석을 선택한 경우 분석 대상 원본 캡처 이미지, locale, timezone, referenceDate 및 AI가 생성한 일정 분석 결과</li>
+      <li>온보딩 완료 여부, 권한 안내 상태, AI 정밀 분석 동의 여부, 기능 설정 등 앱 환경설정</li>
       <li>광고 제공 과정에서 Google Mobile Ads SDK가 처리할 수 있는 광고 관련
-        식별자 등 정보(제8조 참고)</li>
+        식별자 등 정보(제9조 참고)</li>
     </ul>
     <div class="note">
       <p><strong>중요</strong></p>
       <ul>
-        <li>캡처 이미지와 OCR 본문은 JG Studio KR의 서버로 전송하지 않습니다.</li>
+        <li>기본 OCR 및 로컬 일정 분석에서는 캡처 이미지와 OCR 본문을 JG Studio KR의 서버로 전송하지 않습니다.</li>
+        <li>AI 정밀 분석은 사용자가 기능을 직접 선택하고 안내에 동의한 경우에만 선택한 원본 캡처 이미지를 분석 서버로 전송합니다(제8조 참고).</li>
+        <li>AI 분석용 이미지는 JG Studio KR 서버에 영구 저장하지 않으며, AI 정밀 분석 동의 여부는 앱 설정으로 기기 내부에 저장될 수 있습니다.</li>
         <li>결제수단, 카드번호 및 Google 계정 이메일에는 앱이나 개발자가 접근하지 않습니다.</li>
         <li>캡처함은 회원가입·로그인·인앱결제·구독 기능을 제공하지 않으며,
           자체 구매 검증 서버를 호출하지 않습니다.</li>
@@ -275,10 +279,14 @@
     </p>
     <ul>
       <li>스크린샷 또는 카메라 이미지에서 일정·장소·연락처·링크·금액 후보를 찾습니다.</li>
-      <li>이미지와 OCR 본문을 개발자가 운영하는 별도 OCR 서버로 전송하거나 저장하지 않습니다.</li>
+      <li>기본 OCR 및 로컬 일정 분석에서는 이미지와 OCR 본문을 개발자가 운영하는 별도 OCR 서버로 전송하거나 저장하지 않습니다.</li>
       <li>사용자가 저장 기능을 선택하면 원본 이미지와 OCR 문구·좌표가 일정과 함께 앱 전용 로컬 저장공간에 보관될 수 있습니다.</li>
       <li>실시간 카메라 분석 중인 프레임은 분석 목적으로 사용되며, 사용자가 촬영·저장한 결과만 앱 전용 저장공간에 남을 수 있습니다.</li>
     </ul>
+    <p>
+      Google ML Kit를 이용한 로컬 OCR 자체가 서버 OCR로 변경되는 것은 아닙니다.
+      사용자가 별도로 AI 정밀 분석을 선택한 경우의 외부 전송과 처리는 제8조에 따릅니다.
+    </p>
   </section>
 
   <section>
@@ -288,7 +296,7 @@
       <li>일정 제목, 날짜, 시간, 장소, 메모 및 알림 정보</li>
       <li>저장한 일정에 연결된 이미지, OCR 문구 및 좌표</li>
       <li>임시 공유 이미지 캐시</li>
-      <li>온보딩, 권한 안내, 자동 감지 등 앱 설정</li>
+      <li>온보딩, 권한 안내, 자동 감지, AI 정밀 분석 동의 여부 등 앱 설정</li>
     </ul>
     <p>
       캡처함에는 자체 일정/OCR 동기화 서버가 없으며, 위 로컬 데이터를
@@ -330,8 +338,9 @@
     <h2>제7조 Google ML Kit</h2>
     <p>
       캡처함은 이미지 속 글자를 인식하기 위해 Google ML Kit Text Recognition
-      SDK를 사용합니다. 이미지와 OCR 결과 자체는 JG Studio KR의 서버로
-      전송하지 않습니다.
+      SDK를 사용합니다. 기본 OCR은 기기에서 처리되며 이미지와 OCR 결과 자체를
+      JG Studio KR의 서버로 전송하지 않습니다. 사용자가 별도로 AI 정밀 분석을
+      선택한 경우의 외부 전송은 제8조에 따릅니다.
     </p>
     <p>
       Google의 공식 데이터 공개 안내에 따르면 ML Kit SDK는 진단 및 사용 분석을
@@ -358,7 +367,92 @@
   </section>
 
   <section>
-    <h2>제8조 광고(Google AdMob)</h2>
+    <h2>제8조 AI 정밀 분석(Google Gemini)</h2>
+    <p>
+      캡처함은 앱 버전에 따라 Google Gemini를 이용한 <strong>AI 정밀 분석</strong>
+      기능을 제공할 수 있습니다. 이 기능은 선택 기능이며 자동으로 실행되지 않습니다.
+    </p>
+
+    <h3>사용자 선택 및 동의</h3>
+    <ul>
+      <li>사용자가 AI 정밀 분석 버튼을 명시적으로 누르고 최초 안내에 동의한 경우에만 분석 요청을 전송합니다.</li>
+      <li>동의하지 않아도 기기 내 Google ML Kit OCR 및 기본 로컬 일정 분석을 계속 사용할 수 있습니다.</li>
+      <li>동의 여부는 기능 설정을 유지하기 위해 앱 설정으로 기기 내부에 저장될 수 있습니다.</li>
+    </ul>
+
+    <h3>전송 정보와 목적</h3>
+    <p>AI 정밀 분석을 실행하면 다음 정보가 HTTPS로 전송됩니다.</p>
+    <ul>
+      <li>사용자가 AI 분석 대상으로 선택한 원본 캡처 이미지</li>
+      <li>locale(언어·지역), timezone(시간대), referenceDate(기준일)</li>
+      <li>Gemini가 생성한 일정 분석 결과는 동일한 HTTPS 처리 경로를 통해 앱으로 반환됩니다.</li>
+    </ul>
+    <p>
+      전송 목적은 이미지의 시각적 배치와 문맥을 이용해 일정 제목, 시작일,
+      종료일, 시간, 장소, 메모 등의 일정 후보를 추출하고 AI 일정 분석 결과를
+      앱에 제공하기 위한 것입니다.
+    </p>
+
+    <h3>처리 경로</h3>
+    <p>
+      요청은 <strong>캡처함 → JG Studio KR Google Cloud Run 분석 서버
+      (captureham-ai-server) → Google Gemini Developer API</strong> 순서로
+      HTTPS를 통해 처리됩니다. 현재 서버 설정 모델은
+      <strong>gemini-3.1-flash-lite</strong>입니다.
+    </p>
+
+    <h3>JG Studio KR 서버의 처리와 보관</h3>
+    <ul>
+      <li>원본 이미지는 요청 처리 중 메모리에서만 처리하며 파일로 영구 저장하지 않습니다.</li>
+      <li>원본 이미지나 분석 내용을 Cloud Storage 또는 데이터베이스에 저장하지 않습니다.</li>
+      <li>이미지 바이너리·base64, OCR 원문 및 Gemini 전체 raw response를 로그에 기록하지 않습니다.</li>
+      <li>운영 로그에는 request ID, route, model, HTTP status, latency, event count, error type 등의 메타데이터만 기록할 수 있습니다.</li>
+    </ul>
+
+    <h3>Google의 데이터 처리</h3>
+    <p>
+      Gemini Developer API에서의 데이터 처리는
+      <a
+        href="https://ai.google.dev/gemini-api/terms"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Gemini API 추가 서비스 약관</a>과
+      <a
+        href="https://policies.google.com/privacy"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Google 개인정보처리방침</a>, 그리고 해당 API 프로젝트에 적용되는
+      서비스 유형에 따릅니다.
+    </p>
+    <ul>
+      <li>
+        Google 공식 약관상 Unpaid Services 조건에서는 제출한 콘텐츠와 생성된
+        응답이 Google 제품·서비스 및 머신러닝 기술의 제공·개선·개발에 사용될
+        수 있으며, 품질 개선을 위해 인적 검토가 이루어질 수 있습니다.
+      </li>
+      <li>
+        Paid Services 조건에서는 Google이 프롬프트, 관련 시스템 지침과 캐시된
+        콘텐츠, 이미지·문서 등의 파일 및 응답을 제품 개선에 사용하지 않는다고
+        안내합니다. 다만 안전·보안 및 법적 의무를 위한 제한적 처리에는 해당
+        약관이 적용됩니다.
+      </li>
+    </ul>
+    <p>
+      실제 적용 범위는 AI 정밀 분석 사용 시점의 Gemini API 프로젝트 billing
+      상태와 Google의 당시 약관에 따라 달라질 수 있습니다.
+    </p>
+    <div class="note">
+      <p><strong>AI 기능 이용 전 확인해 주세요</strong></p>
+      <p>
+        AI 정밀 분석은 선택 기능입니다. 민감하거나 기밀인 정보가 포함된
+        스크린샷이라면 위 전송 경로와 Google의 적용 약관을 확인하고 AI 분석
+        사용 여부를 신중히 결정해 주세요.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>제9조 광고(Google AdMob)</h2>
     <p>
       캡처함은 앱 운영 및 무료 서비스 제공을 위해 Google AdMob(Google Mobile
       Ads SDK)을 사용해 광고를 표시할 수 있습니다.
@@ -382,9 +476,9 @@
       <p>
         캡처함 또는 개발자는 광고 제공을 목적으로 사용자의 스크린샷 원본,
         OCR 인식 문구, 일정 제목·장소·메모 등 캡처함 고유 데이터를 Google
-        AdMob이나 그 밖의 서버로 전송하지 않습니다. 광고 SDK가 처리하는
-        데이터와 캡처함이 기기 내부에서 처리하는 캡처·일정 데이터는 서로
-        분리되어 있습니다.
+        AdMob에 전달하지 않습니다. 광고 SDK가 처리하는 데이터와 캡처함의
+        캡처·일정 데이터는 서로 분리되어 있습니다. AI 정밀 분석을 위한 전송은
+        광고와 별개의 사용자 선택 기능이며 제8조에 따릅니다.
       </p>
     </div>
     <p>
@@ -394,7 +488,7 @@
   </section>
 
   <section>
-    <h2>제9조 외부 앱 및 서비스 연결</h2>
+    <h2>제10조 외부 앱 및 서비스 연결</h2>
     <p>사용자가 관련 버튼을 직접 누른 경우에만 필요한 정보가 외부 앱으로 전달될 수 있습니다.</p>
     <ul>
       <li>네이버지도: 장소 검색어</li>
@@ -411,7 +505,7 @@
   </section>
 
   <section>
-    <h2>제10조 회원가입 및 계정</h2>
+    <h2>제11조 회원가입 및 계정</h2>
     <ul>
       <li>회원가입 또는 로그인 기능이 없습니다.</li>
       <li>이름, 생년월일, 비밀번호 또는 Google 계정 이메일을 회원 정보로 수집하지 않습니다.</li>
@@ -422,11 +516,14 @@
   </section>
 
   <section>
-    <h2>제11조 데이터 보안</h2>
+    <h2>제12조 데이터 보안</h2>
     <ul>
       <li>캡처 및 OCR 데이터는 앱 전용 로컬 저장공간을 중심으로 처리합니다.</li>
       <li>Android 자동 백업과 기기 간 이전에서 앱 데이터를 제외하도록 구성합니다.</li>
       <li>광고 SDK를 포함한 외부 통신은 HTTPS를 사용합니다.</li>
+      <li>AI 정밀 분석 통신은 HTTPS를 사용합니다.</li>
+      <li>Gemini API Key는 Flutter APK에 포함하지 않고 서버의 Secret Manager에서만 주입합니다.</li>
+      <li>Captureham AI 서버는 원본 이미지를 영구 저장하지 않습니다.</li>
       <li>외부 실행 URI를 로그에 기록하지 않습니다.</li>
       <li>필요한 데이터만 처리하고 사용자가 직접 삭제할 수 있는 기능을 제공합니다.</li>
     </ul>
@@ -434,7 +531,7 @@
   </section>
 
   <section>
-    <h2>제12조 개인정보처리방침 변경</h2>
+    <h2>제13조 개인정보처리방침 변경</h2>
     <ul>
       <li>앱 기능이나 관련 정책이 변경되는 경우 이 방침이 수정될 수 있습니다.</li>
       <li>중요한 변경 사항은 앱 또는 이 공개 페이지를 통해 안내합니다.</li>
@@ -444,7 +541,7 @@
   </section>
 
   <section>
-    <h2>제13조 문의처</h2>
+    <h2>제14조 문의처</h2>
     <div class="contact-box">
       <dl>
         <dt>개발자</dt>

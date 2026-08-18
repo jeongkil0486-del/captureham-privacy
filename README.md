@@ -1,9 +1,13 @@
 # 캡처함 개인정보처리방침 페이지
 
-이 폴더는 캡처함(JG Studio KR) 앱의 **외부 공개용 개인정보처리방침**
+이 저장소는 캡처함(JG Studio KR) 앱의 **외부 공개용 개인정보처리방침**
 정적 웹페이지입니다. 서버, 데이터베이스, JavaScript 없이 `index.html`
 하나로 완성된 페이지이며, Google Play 콘솔의 개인정보처리방침 URL
 항목이나 앱 스토어 등록에 그대로 사용할 수 있습니다.
+
+- 공개 URL: https://jeongkil0486-del.github.io/captureham-privacy/
+- 최초 시행일: 2026년 7월 24일
+- 개정 및 시행일: 2026년 8월 18일
 
 ## 파일 설명
 
@@ -14,40 +18,22 @@
 
 ## 브라우저에서 확인하는 방법
 
-1. 파일 탐색기에서 `privacy-policy/index.html`을 더블클릭해 기본
-   브라우저로 엽니다.
+1. 파일 탐색기에서 저장소 루트의 `index.html`을 더블클릭해 기본 브라우저로 엽니다.
 2. 또는 브라우저 주소창에 파일 경로를 직접 입력해도 됩니다.
-   예: `file:///C:/FlutterProjects/capture_assistant/privacy-policy/index.html`
+   예: `file:///C:/FlutterProjects/captureham-privacy/index.html`
 3. 인터넷 연결 없이도 정상적으로 표시되는지 확인해 보세요
    (외부 리소스를 전혀 사용하지 않기 때문에 오프라인에서도 동일하게 보입니다).
 
-## GitHub Pages에 공개하는 방법
+## GitHub Pages 배포
 
-아래 절차는 안내만 담고 있으며, 이 작업에서 실제로 Git push나
-GitHub Pages 설정을 실행하지는 않았습니다. 준비가 되면 직접
-진행해 주세요.
+이 저장소의 `main` 브랜치 루트가 GitHub Pages로 공개됩니다. 정책을 변경할
+때는 `index.html`과 이 문서의 개정일 및 내용을 함께 갱신하고, 검토한 변경을
+`main`에 반영한 뒤 공개 URL에서 실제 배포 내용을 확인합니다.
 
-1. GitHub에 새 저장소를 만들거나(예: `capture-assistant-privacy`),
-   기존 프로젝트 저장소를 사용합니다.
-2. 이 `privacy-policy` 폴더의 내용을 저장소에 커밋하고 GitHub에
-   push합니다.
-   - 별도 저장소를 쓰는 경우: `privacy-policy` 폴더 안의 파일들을
-     저장소 루트로 복사해서 올리면 URL이 더 짧아집니다.
-   - 기존 프로젝트 저장소를 그대로 쓰는 경우: 폴더 구조를 유지한 채
-     올려도 됩니다.
-3. GitHub 저장소 페이지에서 **Settings → Pages**로 이동합니다.
-4. **Build and deployment** 항목에서 배포할 브랜치(예: `main`)와
-   폴더를 선택합니다.
-   - 폴더를 저장소 루트로 옮겼다면 `/ (root)`를 선택하세요.
-   - `privacy-policy` 폴더를 그대로 두었다면, 저장소 루트에 있는
-     `index.html`이 없으므로 별도 저장소를 만들거나 루트로 복사하는
-     방식을 권장합니다(GitHub Pages는 기본적으로 저장소 루트 또는
-     `/docs` 폴더만 지원합니다).
-5. 저장 후 몇 분 뒤 GitHub가 안내하는 주소
-   (예: `https://내계정.github.io/저장소이름/`)로 접속해 페이지가
-   정상적으로 보이는지 확인합니다.
-6. 이 URL을 Google Play 콘솔의 "개인정보처리방침" 항목이나 앱스토어
-   등록 정보에 입력합니다.
+현재 방침에는 앱 버전에 따라 제공할 수 있는 AI 정밀 분석의 선택·동의 구조,
+전송 정보, JG Studio KR Cloud Run과 Google Gemini Developer API 처리 경로,
+서버 비영구 저장 정책, Gemini API의 Unpaid/Paid Services 데이터 처리 차이가
+포함되어 있습니다.
 
 ## 시행일 수정 위치
 
@@ -55,7 +41,7 @@ GitHub Pages 설정을 실행하지는 않았습니다. 준비가 되면 직접
 
 ```html
 <span class="effective-date">
-  최초 시행일: 2026년 7월 24일 · 개정 및 시행일: 2026년 8월 11일
+  최초 시행일: 2026년 7월 24일 · 개정 및 시행일: 2026년 8월 18일
 </span>
 ```
 
@@ -63,7 +49,7 @@ GitHub Pages 설정을 실행하지는 않았습니다. 준비가 되면 직접
 
 ## 개발자명과 이메일 수정 위치
 
-`index.html`의 "제13조 문의처" 섹션, `contact-box` 안에 있습니다.
+`index.html`의 "제14조 문의처" 섹션, `contact-box` 안에 있습니다.
 
 ```html
 <dt>개발자</dt>
