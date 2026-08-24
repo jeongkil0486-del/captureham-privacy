@@ -7,7 +7,7 @@
 
 - 공개 URL: https://jeongkil0486-del.github.io/captureham-privacy/
 - 최초 시행일: 2026년 7월 24일
-- 개정 및 시행일: 2026년 8월 18일
+- 개정 및 시행일: 2026년 8월 24일
 
 ## 파일 설명
 
@@ -30,10 +30,10 @@
 때는 `index.html`과 이 문서의 개정일 및 내용을 함께 갱신하고, 검토한 변경을
 `main`에 반영한 뒤 공개 URL에서 실제 배포 내용을 확인합니다.
 
-현재 방침에는 앱 버전에 따라 제공할 수 있는 AI 정밀 분석의 선택·동의 구조,
-전송 정보, JG Studio KR Cloud Run과 Google Gemini Developer API 처리 경로,
-서버 비영구 저장 정책, Gemini API의 Unpaid/Paid Services 데이터 처리 차이가
-포함되어 있습니다.
+현재 방침에는 AI 정밀 분석의 선택·동의 구조, JG Studio KR Cloud Run과
+Google Gemini Developer API Paid Service 처리 경로, 익명 설치 ID와 해시 기반
+quota 관리, AdMob Rewarded SSV, Google Play Integrity, 그리고 Captureham 서버의
+이미지 비영구 저장 정책이 포함되어 있습니다.
 
 ## 시행일 수정 위치
 
@@ -41,7 +41,7 @@
 
 ```html
 <span class="effective-date">
-  최초 시행일: 2026년 7월 24일 · 개정 및 시행일: 2026년 8월 18일
+  최초 시행일: 2026년 7월 24일 · 개정 및 시행일: 2026년 8월 24일
 </span>
 ```
 
